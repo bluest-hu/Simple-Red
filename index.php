@@ -7,8 +7,11 @@
 
 	    <header class="header">
 	    	<!--Title $ subTitle -->
-	    	<h1><a href="<?php bloginfo('url');?>"><?php bloginfo('name');?></a></h1>
-	  		<h2><?php bloginfo('description');?></h2>
+	    	<div class="title">
+	    		<h1><a href="<?php bloginfo('url');?>"><?php bloginfo('name');?></a></h1>
+	  			<h2><?php bloginfo('description');?></h2>
+	    	</div>
+	    	
 			<!--Title $ subTitle End -->
 			<!-- Nav -->
 	  		<nav class="nav">
@@ -59,17 +62,17 @@
 
 					<div class="post-meta">
 						<div class="article-author">
-							<p>
+							<span>
 								<?php _e('By:'); ?>
 								<?php the_author_posts_link(); ?>
-							</p>
+							</span>
 						</div><!-- Article Author -->
 						<div class="colum colum-top"> 
 							<time class="article-time">
-									<?php the_time('Y年m月d日') ?>
+									时间：<?php the_time('Y年m月d日') ?>
 							</time><!--Article End-->
 							<div class="article-category">
-								<?php the_category(',') ?>
+								分类：<?php the_category('，') ?>
 							</div><!--Category End -->
 							<div class="article-comment">
 								<?php comments_popup_link('木有评论', '1 条评论', '% 条评论'); ?>
@@ -83,7 +86,7 @@
 					</div><!-- End Blog Entry -->
 					<div class="post-meta">
 						<div class="article-tags">
-							<?php the_tags('Tags:',','); ?>
+							<?php the_tags(); ?>
 						</div><!-- Article Tags End -->
 					</div>
 				</article><!-- Post Meat End -->
@@ -93,14 +96,14 @@
 								<h2><?php_e("Not Found");?></h2> 
 							</div>
 				<?php endif;?>
+		 		<nav class="navigation">
+					<?php posts_nav_link( $sep, $prelabel, $nextlabel ); ?> 
+				</nav> <!-- Navigation Ends-->
 			</div><!-- Post End -->
 			<aside class="siderbar">
 				<?php get_sidebar();?>
 			</aside><!-- SiderBar End -->
 
-	 		<nav class="navigation">
-				<?php par_pagenavi(9); ?>
-			</nav> <!-- Navigation Ends-->
 		</div><!-- Mian End -->
 
 		<!-- Footer Start-->

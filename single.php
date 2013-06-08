@@ -4,10 +4,12 @@
 	<body>
   <!--Header-->
 	    <header class="header">
-
+	
 	    	<!--Title $ subTitle -->
-	    	<h1><a href="<?php bloginfo('url');?>"><?php bloginfo('name');?></a></h1>
-	  		<h2><?php bloginfo('description');?></h2>
+	    	<div class="title">
+		    	<h1><a href="<?php bloginfo('url');?>"><?php bloginfo('name');?></a></h1>
+		  		<h2><?php bloginfo('description');?></h2>
+		  	</div>
 			<!--Title $ subTitle End -->
 
 			<!-- Nav -->
@@ -61,17 +63,17 @@
 
 					<div class="post-meta">
 						<div class="article-author">
-							<p>
+							<span>
 								<?php _e('By:'); ?>
 								<?php the_author_posts_link(); ?>
-							</p>
+							</span>
 						</div>
 						<div class="colum colum-top"> 
 							<time class="article-time">
-									<?php the_time('Y年m月d日') ?>
+								时间：<?php the_time('Y年m月d日') ?>
 							</time>
 							<div class="article-category">
-								<?php the_category(',') ?>
+								分类：<?php the_category('，') ?>
 							</div>
 							<div class="article-comment">
 								<?php comments_popup_link('木有评论', '1 条评论', '% 条评论'); ?>
@@ -86,13 +88,13 @@
 					<!-- End Blog Entry -->
 					<div class="post-meta">
 						<div class="article-tags">
-							<?php the_tags('Tags:',','); ?>
+							<?php the_tags(); ?>
 						</div>
 					</div>
 					<!-- Author Info-->
 					<div class="author-info">
 						<div class="author-avatar">
-							<?php echo get_avatar( get_the_author_email(), 60 ); ?>
+							<?php echo get_avatar( get_the_author_email(), 80 ); ?>
 						</div>
 				
 						<div class="author-descr">
