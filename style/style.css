@@ -39,10 +39,10 @@ img {
 
 a {
 	font: 16px/24px "Microsoft YaHei","宋体";
-	color:  #41B7D8;
+	color:  #888;
 }
 a:hover {
-	color: #CA2F33;
+	color: #ca2f33;
 	text-decoration: underline;
 	-webkit-transition-duration: .2s;
 	-moz-transition-duration: .2s;
@@ -74,12 +74,12 @@ a:hover {
 	margin-left: 30px; 
 	display: inline-block;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0,.5);
-	font: 32px/1.8em "Microsoft YaHei", "宋体";
 }
 
 .title > h1 > a {
 	text-decoration: none;
 	display: block;
+	letter-spacing: 5px;
 	font: bold 48px/76px "宋体", "Microsoft YaHei";
 	color: white;
 }
@@ -117,7 +117,7 @@ a:hover {
 }
 
 #current{
-	border-bottom: 5px solid #20a8ff; 
+	border-bottom: 5px solid #0096ff; 
 }
 
 .header > .nav > ul > li > a {
@@ -139,25 +139,27 @@ a:hover {
 
 /*Main*/
 .main {
-	width: 76%;
-	margin: 90px auto 40px auto;
+	width: 80%;
+	margin: 60px auto 40px auto;
 	overflow: hidden;
 }
 /** Post **/
 .post {
 	width: 65%;
 	float: left;
+
 }
 
 /** Article **/
 .article {
-	margin-bottom: 50px; 
-	border-bottom: 5px solid #41b7d8;
+	border-bottom: 5px solid #0096ff;
+	margin-bottom: 50px;
 }
 
 .article  h1 {
 	font: normal 30px/40px "微软雅黑";
 	border-left: 5px solid #d8311b;
+	letter-spacing: 4px;
 	text-indent: 10px;
 	margin: 0 0 10px 0;
 }
@@ -183,47 +185,112 @@ a:hover {
 }
 /** Entry **/
 .entry {
+	font: 15px/25px "Microsoft YaHei";
 	margin-top: 30px;
 	border-bottom: 1px solid rgba(0, 0, 0, .1);
+	color: #444;
 }
 
+.entry h2 {
+	font: normal 24px/1.8em "Microsoft YaHei";
+	margin: 15px 0;
+	border-bottom: 3px solid #d8311b;
+}
+
+.entry h3 {
+	margin: 15px 0;
+	font: normal 20px/1.8em "Microsoft YaHei";
+	border-bottom: 1px solid #d8311b;
+}
+
+.entry hr {
+	border-color: rgba(0, 0, 0, .1);
+	margin: 20px 0;
+}
 .entry p {
+	margin: 20px 0;
+	padding: 0px;
 	color: #555;
-	font: 16px/1.8em "微软雅黑";
+	font: 15px/25px "Microsoft YaHei";
 	letter-spacing: 1px;
 	margin: 15px 0;
 	word-wrap: break-word;
-	overflow: hidden;
-	margin: 20px 0;
-	padding: 0px;
 }
 
+.entry > p {
+	text-indent: 1.5em;
+}
+
+.entry ul {
+	margin: 0;
+	padding: 0 0 0 50px;
+}
+.entry table {
+	border-collapse: collapse;
+	border: 1px solid rgba(0, 0, 0, .1);
+	border-radius: 2px;
+	background-color: #fff;
+}
+
+.entry table tr {
+	background-color: #fff;
+}
+.entry table h3 {
+	border-bottom: none;
+}
+.entry table tr th , .entry table tr td {
+	border: 1px solid #ccc;
+	padding: 5px 12px;
+	text-align: left;
+}
+.entry table tr:nth-child(odd) {
+	background-color: #f8f8f8;
+}
+.entry code {
+	margin: 0 2px;
+	padding: 0 5px;
+	white-space: nowrap;
+	border: 1px solid #eaeaea;
+	background-color: #f8f8f8;
+	border-radius: 3px;
+}
+
+.entry blockquote {
+	background-color: #f8f8f8;
+	padding: 10px;
+	border-radius: 6px;
+}
 /* Post Meta*/
 .post-meta {
 	color:rgba(0, 0, 0, .3);
-	font: 14px/35px "Microsoft YaHei";
+	font: 13px/35px "Microsoft YaHei";
 	border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
 
 .post-meta a {
-	font-size: 14px;
+	color:rgba(0, 0, 0, .35);
+	font-size: 13px;
 	text-decoration: none;
 }
 
 .post-meta a:hover {
-	text-decoration: underline;
+	text-decoration: none;
+	border-bottom: 1px dotted #CA2F33;
 }
 
 .article-author > span {
-	font-size: 16px;
+	font-size: 15px;
 	font-family: Georgia;
 }
 
 .article-author > span > a {
-	font: 24px/35px Georgia;
+	color: #0096ff;
+	font: 20px/35px Georgia;
 	border-bottom: none;
 }
+
 .colum-top {
+	height: 35px;
 	margin-bottom: 5px;
 }
  .article-category, .article-time, .post-meta .article-comment, .article-tags {
@@ -253,17 +320,22 @@ a:hover {
 	background: url("../images/icon_tags.gif") no-repeat 0 10px; 
 }
 
+/** Post Meta Ends **/
+
+
+/** More Link Style **/ 
+
 .article > .entry .more-link {
-	display: inline-block;
 	margin-top: 10px; 
 	padding: 10px 14px;
 	float: right;
 	font: bold 14px/1.8em "微软雅黑";
 	color: #ffffff;
-	background: #E60900;
+	background: #E53B2C;
 	border-radius: 5px;
 	text-decoration: none;
 	text-shadow: 0 1px 0 rgba(0, 0, 0, .5);
+	display: inline-block;
 	-webkit-transition-duration: .5s;
 	-moz-transition-duration: .5s;
 	-ms-transition-duration: .5s;
@@ -274,8 +346,10 @@ a:hover {
 .article > .entry .more-link:hover {
 	background: #c80800;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, .5);
-
 }
+
+
+
 
  .author-info {
  	margin-top: 20px; 
@@ -284,7 +358,7 @@ a:hover {
 	overflow: hidden;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px; 
-	border-bottom: 5px solid #41b7d8;
+	border-bottom: 5px solid #0096ff;
 }
 .author-info > .author-avatar {
 	float: left;
@@ -557,55 +631,66 @@ a:hover {
 	border: 1px solid rgba(0, 0, 0, .1);
 	box-shadow: inset 0 1px 3px rgba(0, 0, 0, .1);
 }
-/**/
+
+/*** Page Navigation **/
+.post > .navigation {
+	text-align: center;
+	height: 50px;
+}
+
+.post > .navigation > a {
+	font: normal 20px/50px "Microsoft YaHei";
+	padding: 8px 15px;
+	margin: 0 10px;
+	background-color: #E60900;
+	border-radius: 6px;
+	color: white;
+	text-decoration: none;
+}
+
+.post > .navigation > a:hover {
+	background: #c80800;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .5);
+}
+/** SiderBar Begin **/
 .siderbar {
 	float: right;
-	width: 28%;
-
+	width: 30%;
 }
-.siderbar > .widgets {
+.widgets {
 	padding: 0;
 	margin: 0;
 	list-style: none;
 }
 
-.siderbar > .widgets > li {
-	padding: 00px 0;
-	border-bottom: 5px solid #41b7d8;
-	margin-bottom: 30px;
-}
-.siderbar > .widgets .textwidget {
-	padding: 10px;
-	text-align: left;
-}
-.siderbar > .widgets > li:hover h3 {
-	border-bottom: 1px solid #ca2f33;
+.widgets > li {
+	padding: 0;
+	margin-bottom: 50px;
+	border-bottom: 5px solid #0096ff;
 }
 
 .siderbar > .widgets > li > h3 {
-	font: 20px/1.8em "微软雅黑";
+	font: 24px/35px "微软雅黑";
     padding: 0 10px;
-    text-indent: 10px;
+    text-indent: 5px;
     color: #333;
 	border-bottom: 1px solid rgba(0, 0, 0, .1);
 	border-left: 5px solid #ca2f33;
 }
 
+.siderbar > .widgets > li:hover h3 {
+	color: #d8311b;
+	border-bottom: 1px solid #ca2f33;
+}
+
 .siderbar > .widgets > li > ul {
 	list-style-image: url("../images/arrow-superfish-right.png");
-	padding: 10px 10px 10px 15px;
+	padding: 15px 10px 10px 15px;
 	margin: 0;
 }
 
-.siderbar ul li {
-	color: rgba(0, 0, 0, .3);
-}
-
-.siderbar ul li:hover {
-	color: rgba(0, 0, 0, .4);
-}
-
 .siderbar > .widgets > li > ul > li {
+	margin-left: 10px;
 	-webkit-transition-duration: .2s;
 	-moz-transition-duration: .2s;
 	-ms-transition-duration: .2s;
@@ -613,7 +698,7 @@ a:hover {
 	transition-duration: .2s;
 }
 .siderbar > .widgets > li > ul > li:hover {
-	margin-left: 10px;
+	margin-left: 20px;
 }
 
 .siderbar > ul > li:hover a {
@@ -621,51 +706,63 @@ a:hover {
 }
 
 .siderbar ul li a ,.siderbar ul li {
+	font: 14px/25px  "Microsoft YaHei";
 	color: rgba(0, 0, 0, .2);
-	font: 14px/1.8em "Microsoft YaHei", "宋体", Arial;
 	text-decoration: none;
 }
-.siderbar > ul > li > a:hover {
-	color: #41b7d8;
+
+.siderbar ul li:hover {
+	color: rgba(0, 0, 0, .3);
 }
 
 .siderbar ul li a:hover {
-	color: #41b7d8;
-	border-bottom: 1px dotted rgba(0, 0, 0, .3);
+	color: #0096ff;
+	text-decoration: underline;
 }
 .siderbar > .widgets .children {
 	margin: 0 ;
 	padding: 0 0 0 20px;
 }
+
+.siderbar .tagcloud {
+	padding: 15px 10px 10px 15px;
+}
+
+.widgets .textwidget {
+	padding: 10px;
+	text-align: center;
+}
+
 /* Footer Start */
 .footer {
 	width: 100%;
-	background-color: #CA2F33;
+	background-color: #ca2f33;
 	overflow: hidden;
 }
 
 .footer > .footer-content {
-	width: 70%;
-	margin: 25px auto;
-	color: rgba(255, 255, 255, .5);
+	width: 80%;
+	margin: 40px auto;
+	color: white;
 }
+
 .footer > .footer-content p {
 	margin: 0;
 	padding: 0;
-}
-.footer > .footer-content a {
-	font: normal 14px/1em Georgia,"宋体";
-	color:rgba(255, 255, 255, .75);
-	margin: 5px 0 5px 0;
-	padding: 0;
+	font: normal 10px/20px Georgia,"宋体";
+	color:rgba(255, 255, 255, .65);
 }
 
 .footer > .footer-content a {
 	color: #FFFFFF;
-	font: normal 14px/1em Arial,Georgia,"宋体";
+	font: normal 12px/20px Georgia,"宋体";
+	color:rgba(255, 255, 255, .85);
+	margin: 5px 0 5px 0;
+	padding: 0;
 	text-decoration: none;
 	border-bottom: 1px solid rgba(255, 255, 255, .3);
 }
+
 .footer > .footer-content a:hover {
 	color: #EEE;;
 }
@@ -682,8 +779,7 @@ a:hover {
 	clear: both;
 }
 
-
-/**/
+/** Footer Ends **/
 
 .tcg-div {
    padding:10px;
