@@ -70,7 +70,7 @@
 								<?php the_author_posts_link(); ?>
 							</span>
 						</div><!-- Article Author -->
-						<div class="colum colum-top"> 
+						<div class="column column-top"> 
 							<time class="article-time">
 									时间：<?php the_time('Y年m月d日') ?>
 							</time><!--Article End-->
@@ -88,9 +88,11 @@
 							<?php the_content("Read More >>"); ?>
 					</div><!-- End Blog Entry -->
 					<div class="post-meta">
-						<div class="article-tags">
-							<?php the_tags(); ?>
-						</div><!-- Article Tags End -->
+						<div class="colum column-bottom">
+							<div class="article-tags">
+								<?php the_tags(); ?>
+							</div><!-- Article Tags End -->
+						</div><!-- Column Bottom Ends -->
 					</div>
 				</article><!-- Post Meat End -->
 						<?php endwhile;?>
@@ -99,8 +101,8 @@
 								<h2><?php_e("Not Found");?></h2> 
 							</div>
 				<?php endif;?>
-		 		<nav class="navigation">
-					<?php //posts_nav_link( $sep, $prelabel, $nextlabel ); ?> 
+		 		<nav class="page-navigation">
+					<?php par_pagenavi(8); ?> 
 				</nav> <!-- Navigation Ends-->
 			</div><!-- Post End -->
 			<aside class="siderbar">

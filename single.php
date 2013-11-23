@@ -68,7 +68,7 @@
 								<?php the_author_posts_link(); ?>
 							</span>
 						</div>
-						<div class="colum colum-top"> 
+						<div class="column column-top"> 
 							<time class="article-time">
 								时间：<?php the_time('Y年m月d日') ?>
 							</time>
@@ -78,19 +78,22 @@
 							<div class="article-comment">
 								<?php comments_popup_link('木有评论', '1 条评论', '% 条评论'); ?>
 							</div>
-						</div>
+						</div><!-- Column Top Ends -->
 					</div>
 
-					<!-- Blog Entry -->
-					<div class="entry">
+					
+					<div class="entry"><!-- Blog Entry -->
 							<?php the_content("Read More >>"); ?>
-					</div>
-					<!-- End Blog Entry -->
+					</div><!-- End Blog Entry -->
+
 					<div class="post-meta">
-						<div class="article-tags">
-							<?php the_tags(); ?>
-						</div>
+						<div class="colum column-bottom">
+							<div class="article-tags">
+								<?php the_tags(); ?>
+							</div><!-- Article Tags End -->
+						</div><!-- Column Bottom Ends -->
 					</div>
+
 					<!-- Author Info-->
 					<div class="author-info">
 						<div class="author-avatar">
@@ -141,7 +144,6 @@
 
 
 						<?php endwhile;?>
-
 					<?php else:?>
 
 							<div>
@@ -155,7 +157,6 @@
 			</aside>
 		</div>
 	
-
 		<!-- Footer Start-->
 		<?php get_footer();?>
 		<!-- Footer End -->

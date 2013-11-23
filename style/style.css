@@ -49,7 +49,12 @@ a:hover {
 	text-decoration: underline;
 	
 }
-
+.clear {
+	width: 0px;
+	height: 0px;
+	display: block;
+	clear: both;
+}
 /************************* Header ****************************/
 
 .header {
@@ -85,6 +90,7 @@ a:hover {
 	-ms-transform: scale(1.1);
 	-o-transform: scale(1.1);
 	transform: scale(1.1);
+	transition: all .2s ease-in;
 }
 
 .header >.title > h2 {
@@ -201,7 +207,7 @@ ul, ul li {
 	border-color: rgba(0, 0, 0, .1);
 	margin: 20px 0;
 }
-.entry p {
+.entry p, .entry a {
 	margin: 20px 0;
 	padding: 0px;
 	color: #555;
@@ -213,8 +219,9 @@ ul, ul li {
 
 .entry ul {
 	margin: 0;
-	padding: 0 0 0 50px;
+	padding: 0 0 0 20px;
 }
+
 .entry table {
 	border-collapse: collapse;
 	border: 1px solid rgba(0, 0, 0, .1);
@@ -229,14 +236,17 @@ ul, ul li {
 .entry table tr {
 	background-color: #fff;
 }
+
 .entry table h3 {
 	border-bottom: none;
 }
+
 .entry table tr th , .entry table tr td {
 	border: 1px solid #ccc;
 	padding: 5px 12px;
 	text-align: left;
 }
+
 .entry table tr:nth-child(odd) {
 	background-color: #f8f8f8;
 }
@@ -278,13 +288,13 @@ ul, ul li {
 }
 
 .post-meta a:hover {
-	color: #ca2f33;
+	color: #E60900;
 	text-decoration: none;
 	border-bottom: 1px dotted #CA2F33;
 }
 
 
-/************************** Article Author **********************/
+/*** Article Author ***/
 .post-meta .article-author > span {
 	font-size: 15px;
 	font-family: Georgia;
@@ -302,39 +312,44 @@ ul, ul li {
 	border-bottom: none;
 }
 
-/********** Article Time, Article Comment,Article Category, Article Tags *****/ 
-.post-meta .colum-top {
+/** Article Time, Article Comment,Article Category, Article Tags **/ 
+.post-meta .column-top {
 	width: inherit;
 	height: 35px;
 	margin-bottom: 2px;
 }
 
 .post-meta .article-category, .post-meta .article-time, .post-meta .article-comment, .post-meta .article-tags {
-	display: inline-block;
+	display: block;
 	text-indent: 25px;
 	margin: 0 15px 0 0;
 	float: left;
 }
 
-.post-meta .article-time {
+.post-meta .column-top .article-time {
 	background: url("../images/icon_date.gif") no-repeat 0 10px; 
 }
 
-.post-meta .article-category {
+.post-meta .column-top .article-category {
 	background: url("../images/icon_tags.gif") no-repeat 0 10px; 
 }
 
-.post-meta .article-comment {
+.post-meta .column-top .article-comment {
 	background: url("../images/icon_comments.gif") no-repeat 0 10px; 
 	float: right;
 	margin-right: 0; 
 }
 
-.post-meta .article-tags {
+.post-meta .column-bottom {
+	overflow: hidden;
+}
+/** Article Tags **/
+.post-meta .column-bottom .article-tags {
 	width: 100%;
 	margin: 5px 0 5px 0;
 	color: rgba(0, 0, 0, 0.3);
 	background: url("../images/icon_tags.gif") no-repeat 0 10px; 
+	clear: left;
 }
 
 /*********************** Post Meta Ends ***************************/
@@ -471,7 +486,6 @@ ul, ul li {
 /*Comment*/
 .article-comment {
 	margin-top: 20px;
-	clear: both;
 }
 
 .article-comment > h3{
@@ -574,11 +588,7 @@ ul, ul li {
 	position: absolute;
 	right: 10px;
 	bottom: -8px;
-	-webkit-ransition-duration: .5s;
-	-moz-ransition-duration: .5s;
-	-ms-ransition-duration: .5s;
-	-o-ransition-duration: .5s;
-	ransition-duration: .5s;
+	transition-duration: .5s;
 }
 .comment-body > .reply:hover {
 	bottom: 0;
@@ -647,26 +657,35 @@ ul, ul li {
 	box-shadow: inset 0 1px 3px rgba(0, 0, 0, .1);
 }
 
-/*** Page Navigation **/
-.post > .navigation {
+/***************** Page Navigation **********************/
+.post > .page-navigation {
 	text-align: center;
-	height: 50px;
+	height: 40px;
+	padding: 10px 0;
 }
 
-.post > .navigation > a {
-	font: normal 20px/50px "Microsoft YaHei";
-	padding: 8px 15px;
-	margin: 0 10px;
-	background-color: #E60900;
-	border-radius: 6px;
-	color: white;
+.post > .page-navigation a {
+	font: bold 16px/40px "Microsoft YaHei";
+	padding: 4px 8px;
+	margin: 0 5px;
+	border: 1px solid #E60900;
+	color: #E60900;
+	border-radius: 4px;
 	text-decoration: none;
 }
 
-.post > .navigation > a:hover {
+.post > .page-navigation a.extend, .post > .page-navigation span a {
+	color: #FFF;
+	font-weight: normal;
+	background-color: #E60900;
+}
+
+.post > .page-navigation a:hover {
 	background: #c80800;
+	color: #FFF;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, .5);
 }
+
 /************************************* SiderBar Begin *****************************/
 .siderbar {
 	float: right;
