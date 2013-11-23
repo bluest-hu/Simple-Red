@@ -55,7 +55,7 @@
 					<?php if(have_posts()):?>
 						<?php while (have_posts()):the_post();?>
 				<article class="article" id="post-<?php the_ID();?>">
-					<h1>
+					<h1 class="article-title">
 						<a href="<?php the_permalink();?>" title="<?php the_title();?>">
 							<?php the_title(); ?>
 						</a>
@@ -63,7 +63,7 @@
 
 					<div class="post-meta">
 						<div class="article-author">
-							<span>
+							<span class="article-author-info">
 								<?php _e('By:'); ?>
 								<?php the_author_posts_link(); ?>
 							</span>

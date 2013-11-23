@@ -1,36 +1,13 @@
 <?php 
 	if (function_exists('register_sidebar')) { 
-	register_sidebar(array( 
-		'name' => 'sidebar', // 侧边栏 1 的名称 
-		'before_widget' => '<li>', // widget 的开始标签 
-		'after_widget' => '</li>', // widget 的结束标签 
-		'before_title' => '<h3>', // 标题的开始标签 
-		'after_title' => '</h3>'// 标题的结束标签
-	));
- 
-	register_sidebar(array( 
-		'name' => '内页边栏', // 侧边栏 2 的名称 
-		'before_widget' => '<li>', // widget 的开始标签 
-		'after_widget' => '</li>', // widget 的结束标签 
-		'before_title' => '<h3>', // 标题的开始标签 
-		'after_title' => '</h3>'// 标题的结束标签
-	));
- 
-	register_sidebar(array( 
-		'name' => '边栏3', // 侧边栏 3 的名称 
-		'before_widget' => '<li>', // widget 的开始标签 
-		'after_widget' => '</li>', // widget 的结束标签 
-		'before_title' => '<h3>', // 标题的开始标签 
-		'after_title' => '</h3>'// 标题的结束标签
-	));
- 
-	register_sidebar(array( 
-		'name' => '边栏4', // 侧边栏 4 的名称 
-		'before_widget' => '<li>', // widget 的开始标签 
-		'after_widget' => '</li>', // widget 的结束标签 
-		'before_title' => '<h3>', // 标题的开始标签 
-		'after_title' => '</h3>'// 标题的结束标签
-	)); 
+		register_sidebar(array( 
+			'name' => 'sidebar', // 侧边栏 1 的名称 
+			'before_widget' => '<li class="widgets-list">', // widget 的开始标签 
+			'after_widget' => '</li>', // widget 的结束标签 
+			'before_title' => '<h3 class="widget-title">', // 标题的开始标签 
+			'after_title' => '</h3>'// 标题的结束标签
+		));
+
 } 
 
 /* Mini Gavatar Cache by Willin Kan. Modify by zwwooooo 
@@ -56,31 +33,61 @@
 
 
 // /* PageNavi */
-// function par_pagenavi($range = 9){
-// 	global $paged, $wp_query;
+function par_pagenavi($range = 9){
+	global $paged, $wp_query;
 
-// 	if ( !$max_page ) {$max_page = $wp_query->max_num_pages;}
+	if (!$max_page ) {
+		$max_page = $wp_query->max_num_pages;
+	}
 
-// 	if($max_page > 1){if(!$paged){$paged = 1;}
+	if ($max_page > 1) {
+		if (!$paged) {
+			$paged = 1;
+		}
 
-// 	if($paged != 1){echo "<a href='" . get_pagenum_link(1) . "' class='extend' title='跳转到首页'> 返回首页 </a>";}
-// 	previous_posts_link(' 上一页 ');
+		if($paged != 1) {
+			echo "<a href='" . get_pagenum_link(1) . "' class='extend' title='跳转到首页'> 返回首页 </a>";
+		}
 
-//     if($max_page > $range){
-// 		if($paged < $range){for($i = 1; $i <= ($range + 1); $i++){echo "<a href='" . get_pagenum_link($i) ."'";
-// 		if($i==$paged)echo " class='current'";echo ">$i</a>";}}
+		previous_posts_link(' 上一页 ');
 
-//     elseif($paged >= ($max_page - ceil(($range/2)))){
-// 		for($i = $max_page - $range; $i <= $max_page; $i++){echo "<a href='" . get_pagenum_link($i) ."'";
-// 		if($i==$paged)echo " class='current'";echo ">$i</a>";}}
-
-// 	elseif($paged >= $range && $paged < ($max_page - ceil(($range/2)))){
-// 		for($i = ($paged - ceil($range/2)); $i <= ($paged + ceil(($range/2))); $i++){echo "<a href='" . get_pagenum_link($i) ."'";if($i==$paged) echo " class='current'";echo ">$i</a>";}}}
-
-//     else{for($i = 1; $i <= $max_page; $i++){echo "<a href='" . get_pagenum_link($i) ."'";
-//     if($i==$paged)echo " class='current'";echo ">$i</a>";}}
-// 	next_posts_link(' 下一页 ');
-//     if($paged != $max_page){echo "<a href='" . get_pagenum_link($max_page) . "' class='extend' title='跳转到最后一页'> 最后一页 </a>";}}
-// }
+    	if ($max_page > $range) {
+			if ($paged < $range){ 
+				for ($i = 1; $i <= ($range + 1); $i++) {
+					echo "<a href='" . get_pagenum_link($i) ."'";
+					if ( $i == $paged) {
+						echo " class='current'";echo ">$i</a>";
+					}
+				}
+			} elseif ($paged >= ($max_page - ceil(($range/2)))) {
+				for ($i = $max_page - $range; $i <= $max_page; $i++) {
+					echo "<a href='" . get_pagenum_link($i) ."'";
+					if ($i == $paged) {
+						echo " class='current'";echo ">$i</a>";
+					}
+				}
+			} elseif ($paged >= $range && $paged < ($max_page - ceil(($range/2)))) {
+				for($i = ($paged - ceil($range/2)); $i <= ($paged + ceil(($range/2))); $i++){
+					echo "<a href='" . get_pagenum_link($i) ."'";
+					if ($i==$paged) {
+						echo " class='current'";echo ">$i</a>";
+					}
+				}
+			}
+		} else {
+			for ($i = 1; $i <= $max_page; $i++) {
+				echo "<a href='" . get_pagenum_link($i) ."'";
+			    if ($i==$paged) {
+			    	echo " class='current'";echo ">$i</a>";
+			    }
+			}
+		}
+		next_posts_link(' 下一页 ');
+		
+    	if ($paged != $max_page) {
+    		echo "<a href='" . get_pagenum_link($max_page) . "' class='extend' title='跳转到最后一页'> 最后一页 </a>";
+    	}
+    }
+}
 
 // ?>
