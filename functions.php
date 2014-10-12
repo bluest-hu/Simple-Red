@@ -7,6 +7,7 @@
 			'before_title' => '<h3 class="widget-title">', // 标题的开始标签 
 			'after_title' => '</h3>'// 标题的结束标签
 		));
+
 } 
 
 /* Mini Gavatar Cache by Willin Kan. Modify by zwwooooo 
@@ -19,14 +20,6 @@
      $a = $w. '/avatar/'. $f . '.jpg';
      $e = preg_replace('/wordpress\//', '', ABSPATH) . 'avatar/' . $f . '.jpg';
      $t = 604800; //设定7天, 单位:秒
-         $STORE_PATH = ABSPATH . '/avatar'; //默认存储地址
-
-    // 暂时判断目录存在，如果不存在创建，存放的文件夹
-	if (!is_dir($STORE_PATH)) {
-		if ( !!mkdir( $STORE_PATH ) ) {
-		}
-	} 
-	// 设置默认头像
      if ( empty($default) ) $default = $w. '/avatar/default.jpg';
      if ( !is_file($e) || (time() - filemtime($e)) > $t ){ //当头像不存在或者文件超过7天才更新
          $r = get_option('avatar_rating');
