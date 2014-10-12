@@ -668,8 +668,8 @@ ul, ul li {
 	font: bold 16px/40px "Microsoft YaHei";
 	padding: 4px 8px;
 	margin: 0 5px;
-	border: 1px solid #E60900;
-	color: #E60900;
+	border: 1px solid #E53B2C;
+	color: #E53B2C;
 	border-radius: 4px;
 	text-decoration: none;
 }
@@ -677,11 +677,12 @@ ul, ul li {
 .post > .page-navigation a.extend, .post > .page-navigation span a {
 	color: #FFF;
 	font-weight: normal;
-	background-color: #E60900;
+	background-color: #E53B2C;
 }
 
 .post > .page-navigation a:hover {
-	background: #c80800;
+	background: #C80800;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, .8);
 	color: #FFF;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, .5);
 }
